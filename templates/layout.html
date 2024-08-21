@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEAMS</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #212529;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        h1 {
+            color: #343a40;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .slideshow-container {
+         position: relative;
+         width: 100%;
+         height: 100vh;
+         overflow: hidden;
+      }
+
+      .jumbotron {
+      background-color: #f8f9fa;
+      padding: 4rem 2rem;
+      border-radius: 0.3rem;
+      margin: 2rem;
+   }
+
+   .text-center {
+      text-align: center;
+   }
+
+   .display-4 {
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: #343a40;
+   }
+
+   .lead {
+      font-size: 1.25rem;
+      color: #6c757d;
+   }
+
+   .btn-group {
+      margin-top: 1rem;
+   }
+
+   .btn {
+      margin: 0 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.125rem;
+      border-radius: 0.3rem;
+      text-decoration: none;
+   }
+
+   .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      color: #fff;
+   }
+
+   .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #004085;
+   }
+
+   .btn-secondary {
+      background-color: #6c757d;
+      border-color: #6c757d;
+      color: #fff;
+   }
+
+   .btn-secondary:hover {
+      background-color: #5a6268;
+      border-color: #545b62;
+   }
+   
+        nav.navbar {
+            background-color: #343a40;
+            padding: 10px;
+            color: #ffffff;
+        }
+        nav.navbar a {
+            color: rgb(21, 21, 100);
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+        nav.navbar a:hover, nav.navbar a.active {
+            color: white;
+        }
+        nav .navbar-header a.navbar-brand {
+            color: #ffffff;
+            font-size: 18px;
+        }
+        nav .navbar-header a.navbar-brand:hover {
+            color: white;
+        }
+        nav .navbar-nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            margin-left: auto; /* Ensures alignment to the right */
+        }
+        nav .navbar-nav li {
+            margin-left: 30px;
+        }
+        nav .navbar-nav li a {
+            text-decoration: none;
+        }
+        .navbar-collapse {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    {% include 'includes/_navbar.html' %}
+    <div class="container">
+        {% include 'includes/_messages.html' %}
+        {% block body %}{% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <style>
+    .product-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .product-container h1 {
+        text-align: center;
+        color: #343a40;
+        margin-bottom: 20px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-control {
+        padding: 10px;
+        font-size: 1em;
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+        width: 100%;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 5px;
+        width: 100%;
+        cursor: pointer;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+  </style>
+
+  <div class="product-container">
+    <h1>Product</h1>
+    {% from "includes/_formhelpers.html" import render_field %}
+    <form method="POST" action="">
+      <div class="form-group">
+        {{render_field(form.product_name, class_="form-control", placeholder="Product Name", style="padding: 10px; font-size: 1em;")}}
+      </div>
+      <div class="form-group">
+        {{render_field(form.description, class_="form-control", placeholder="Description", style="padding: 10px; font-size: 1em;")}}
+      </div>
+      <div class="form-group">
+        {{render_field(form.price, class_="form-control", placeholder="Price", style="padding: 10px; font-size: 1em;")}}
+      </div>
+      <div class="form-group">
+        {{render_field(form.inv_id, class_="form-control", placeholder="Inventory ID", style="padding: 10px; font-size: 1em;")}}
+      </div>
+      
+      <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        font-family: Arial, sans-serif; /* Smooth font for a professional look */
+    }
+    .register-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height */
+        background-color: #e9ecef; /* Soft background color */
+    }
+    .register-box {
+        background-color: #ffffff;
+        padding: 20px; /* Reduced padding for a smaller form */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px; /* Reduced width for a smaller form */
+        box-sizing: border-box;
+        border: 1px solid #dee2e6; /* Subtle border for a more defined box */
+        margin-top: -10vh; /* Raise the form by 10% of viewport height */
+    }
+    .register-box h1 {
+        text-align: center;
+        margin-bottom: 20px; /* Adjusted margin */
+        font-size: 1.8em; /* Slightly smaller font size */
+        color: #343a40;
+        font-weight: 600; /* Bold font for emphasis */
+    }
+    .form-group {
+        margin-bottom: 15px; /* Adjusted spacing between fields */
+    }
+    .form-control {
+        width: 100%;
+        padding: 10px; /* Increased padding */
+        border: 1px solid #ced4da; /* Border color for better contrast */
+        border-radius: 5px;
+        font-size: 1em;
+        box-sizing: border-box;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        padding: 12px;
+        font-size: 1.1em; /* Slightly larger button text */
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        width: 100%; /* Full width button */
+        border: none; /* Remove default border */
+        color: #ffffff;
+        cursor: pointer; /* Pointer cursor for better UX */
+        display: block; /* Ensure the button is displayed as a block element */
+        margin-top: 10px; /* Add space above the button */
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+    .btn-primary:focus {
+        outline: none; /* Remove default outline on focus */
+        box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5); /* Add a custom focus outline */
+    }
+</style>
+
+<div class="register-container">
+    <div class="register-box">
+        <h1>Register</h1>
+        {% from "includes/_formhelpers.html" import render_field %}
+        <form method="POST" action="">
+            <div class="form-group">
+                {{render_field(form.name, class_="form-control")}}
+            </div>
+            <div class="form-group">
+                {{render_field(form.email, class_="form-control")}}
+            </div>
+            <div class="form-group">
+                {{render_field(form.username, class_="form-control")}}
+            </div>
+            <div class="form-group">
+                {{render_field(form.password, class_="form-control")}}
+            </div>
+            <div class="form-group">
+                {{render_field(form.confirm, class_="form-control")}}
+            </div>
+            <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+   <div class="jumbotron text-center">
+      <h1 class="display-4">Welcome To PEAMS</h1>
+      <p class="lead">Your go-to solution for product expiry management</p>
+      {% if session.logged_in == NULL %}
+         <div class="btn-group mt-3">
+            <a href="/register" class="btn btn-primary btn-lg">Register</a>
+            <a href="/login" class="btn btn-secondary btn-lg">Login</a>
+         </div>
+      {% endif %}
+   </div>
+{% endblock %}
